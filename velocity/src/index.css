@@ -35,4 +35,32 @@
     @apply rounded-[10px] w-full uppercase font-medium text-white tracking-[2px] text-[12px] flex justify-center
     items-center transition-all duration-300;
   }
+
+  .btn-sm {
+    @apply h-14;
+  }
+
+  .btn-lg {
+    @apply h-16;
+  }
+
+  .btn-cta {
+    @apply bg-black h-[54px] rounded-[5px] px-4 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-black;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-400;
+  }
+
+  .btn-accent {
+    @apply bg-red-500 hover:bg-red-500-hover;
+  }
+
+  .active {
+    @apply text-red-500;
+  }
 }
