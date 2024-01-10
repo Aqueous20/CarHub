@@ -5,6 +5,8 @@ import { Link } from "react-scroll";
 import SearchMobile from "./SearchMobile";
 import { useMediaQuery } from "react-responsive";
 import logo from "../assets/icons/logo.svg";
+import {BiMenuAltRight, Bix} from 'react-icons/bi'
+
 
 function Header() {
   const [header, setHeader] = useState(false);
@@ -32,7 +34,7 @@ function Header() {
     };
   }, []);
 
-  console.log(header);
+  
 
   return (
     <header
@@ -41,13 +43,22 @@ function Header() {
       } fixed w-full max-w-[1920px] mx-auto z-20 transition-all duration-300`}
     >
       <div className="xl:container mx-auto flex-col xl:flex-row xl:items-center xl:justify-between">
-        <div>
+        <div className="flex justify-between items-center px-4">
           {/* logo */}
-          <Link>
+          <Link
+            to="home"
+            smooth={desktopMode}
+            spy={true}
+            className="cursor-pointer"
+          >
             <div className="w-[130px] h-fit">
               <img src={logo} alt="binge sake"></img>
             </div>
           </Link>
+
+          {/* nav open menu */}
+
+          <div>menu</div>
         </div>
       </div>
     </header>
