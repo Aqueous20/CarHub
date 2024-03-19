@@ -1,13 +1,16 @@
 import React from "react";
 import { useContext, useState, useEffect } from "react";
-//import Image from "next/image";
 import { Link } from "react-scroll";
 import SearchMobile from "./SearchMobile";
 import { useMediaQuery } from "react-responsive";
 import logo from "../assets/icons/logo.svg";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
+import { SearchContext } from "../context/search";
 
 function Header() {
+
+  const {setSearchActive} = useContext(SearchContext)
+
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -21,6 +24,13 @@ function Header() {
         setHeader(true);
       } else {
         setHeader(false);
+      }
+
+      // search
+      if(window.scrollY > 800) {
+        setSearchActive(true)
+      }else{
+        setSearchActive(false)
       }
     };
 
@@ -72,7 +82,9 @@ function Header() {
         <nav
           className={`${
             nav ? "max-h-max py-8 px-4 xl:py-0 xl:px-0" : "max-h-0 xl:max-h-max"
-          } flex flex-col w-full bg-white gap-y-6 overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max`}
+          } flex flex-col w-full bg-white gap-y-6 overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max xl:gap-x-8
+           xl:h-max xl:bg-transparent xl:pb-0 transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[15px]
+           xl:normal-case`}
         >
           <Link
             className="cursor-pointer"
