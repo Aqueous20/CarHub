@@ -8,8 +8,7 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 import { SearchContext } from "../context/search";
 
 function Header() {
-
-  const {setSearchActive} = useContext(SearchContext)
+  const { setSearchActive } = useContext(SearchContext);
 
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
@@ -27,10 +26,10 @@ function Header() {
       }
 
       // search
-      if(window.scrollY > 800) {
-        setSearchActive(true)
-      }else{
-        setSearchActive(false)
+      if (window.scrollY > 800) {
+        setSearchActive(true);
+      } else {
+        setSearchActive(false);
       }
     };
 
@@ -58,7 +57,7 @@ function Header() {
             spy={true}
             className="cursor-pointer"
           >
-            <div className="w-[130px] h-fit">
+            <div className="w-[170px] h-fit">
               <img src={logo} alt="binge sake"></img>
             </div>
           </Link>
